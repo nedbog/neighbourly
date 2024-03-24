@@ -396,4 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-/src/neighbourly/neighbourly.Web/appsettings.Development.json
+
+# custom files and folders
+appsettings.Development.json
