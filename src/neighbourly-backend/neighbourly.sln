@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "neighbourly.Web", "neighbourly.Web\neighbourly.Web.csproj", "{49AE253E-A27D-4842-B056-E68FA98BA870}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "neighbourly.Web", "neighbourly.Web\neighbourly.Web.csproj", "{49AE253E-A27D-4842-B056-E68FA98BA870}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "neighbourly.Core", "neighbourly.Core\neighbourly.Core.csproj", "{3A49B8FE-A028-4835-82C4-5B5361235A71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{49AE253E-A27D-4842-B056-E68FA98BA870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49AE253E-A27D-4842-B056-E68FA98BA870}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49AE253E-A27D-4842-B056-E68FA98BA870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A49B8FE-A028-4835-82C4-5B5361235A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A49B8FE-A028-4835-82C4-5B5361235A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A49B8FE-A028-4835-82C4-5B5361235A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A49B8FE-A028-4835-82C4-5B5361235A71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
