@@ -15,4 +15,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\neighbourly.Core\neighbourly.Core.csproj" />
+    <ProjectReference Include="..\neighbourly.Data\neighbourly.Data.csproj" />
+  </ItemGroup>
+
 </Project>
