@@ -22,7 +22,6 @@ const login = async () => {
     console.error(error);
   }
 };
-
 </script>
 
 <template>
