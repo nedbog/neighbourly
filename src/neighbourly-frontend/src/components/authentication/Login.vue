@@ -16,7 +16,7 @@ const login = async () => {
       rememberMe: rememberMe.value
     });
     const token = response.data.token;
-    localStorage.setItem('token', token);
+    localStorage.setItem('neighbourly-jwt-token', token);
     router.push('/');
   } catch (error) {
     console.error(error);

@@ -14,7 +14,7 @@ app.use(router)
 
 axios.interceptors.request.use(
     (config) => {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('neighbourly-jwt-token');
       if (token) {
         config.headers['Authorization'] = 'Bearer ' + token;
       }
