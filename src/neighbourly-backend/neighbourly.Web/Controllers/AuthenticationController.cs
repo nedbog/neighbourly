@@ -10,25 +10,12 @@ using Neighbourly.Web.Controllers.Models;
 namespace neighbourly.Web.Controllers;
 
 [Route("[controller]")]
-public class AuthenticationController : ControllerBase
+public class AuthenticationController(SignInManager<IdentityUser> signInManager, IConfiguration configuration) : ControllerBase
 {
-    private readonly ILogger<AuthenticationController> _logger;
-    private readonly SignInManager<IdentityUser> _signInManager;
-    private readonly IConfiguration _configuration;
-
-    public AuthenticationController(ILogger<AuthenticationController> logger,
-        SignInManager<IdentityUser> signInManager,
-        IConfiguration configuration)
-    {
-        _logger = logger;
-        _signInManager = signInManager;
-        _configuration = configuration;
-    }
-
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequestModel model)
     {
-        var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+        var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
 
         if (result.Succeeded)
         {
@@ -48,7 +35,7 @@ public class AuthenticationController : ControllerBase
 
     private string GenerateJwtToken(LoginRequestModel model)
     {
-        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Authentication:JwtBearer:SecurityKey"]));
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Authentication:JwtBearer:SecurityKey"]));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
         var claims = new[]
