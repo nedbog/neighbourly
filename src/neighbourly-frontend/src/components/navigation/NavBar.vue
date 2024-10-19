@@ -3,7 +3,7 @@
 
 <template>
   <nav>
-    <h1>This is navigation, should really be replaced by somthing fancy!</h1>
+    <h1>This is navigation, should really be replaced by something fancy!</h1>
   </nav>
 </template>
 
