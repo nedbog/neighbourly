@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import Authenticate from './components/authentication/Authenticate.vue'
+import NavBar from './components/navigation/NavBar.vue';
 
 const isAuthenticated = localStorage.getItem('neighbourly-jwt-token') ? true : false;
 </script>
@@ -8,7 +9,7 @@ const isAuthenticated = localStorage.getItem('neighbourly-jwt-token') ? true : f
 <template>
   <header>
     <div v-if="isAuthenticated">
-      <h1>authenticated</h1>
+      <NavBar />
     </div>
     <div v-else>
       <Authenticate />
