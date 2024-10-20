@@ -8,8 +8,9 @@ const items = ref([
     icon: 'pi pi-home'
   },
   {
-    label: 'Features',
-    icon: 'pi pi-star'
+    label: 'Login',
+    icon: 'pi pi-star',
+    route: '/login'
   },
   {
     label: 'Projects',
