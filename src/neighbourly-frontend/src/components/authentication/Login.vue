@@ -2,6 +2,10 @@
 import axios from 'axios';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import InputText from 'primevue/inputtext';
+import Password from 'primevue/password';
+import Checkbox from 'primevue/checkbox';
+import Button from 'primevue/button';
 
 const email = ref<string>('');
 const password = ref<string>('');
@@ -27,22 +31,21 @@ const login = async () => {
 <template>
   <main>
     <form @submit.prevent="login">
-      <div>
-        <label>Username</label>
-        <input type="email" v-model="email" />
+      <div class="flex flex-col gap-2">
+        <label for="username">Email</label>
+        <InputText id="username" v-model="email" aria-describedby="username-help" type="email" />
       </div>
-      <div>
-        <label>Password</label>
-        <input type="password" v-model="password" />
+      <div class="flex flex-col gap-2">
+        <label for="password">Password</label>
+        <Password id="password" v-model="password" :feedback="false" toggleMask />
       </div>
-      <div>
-        <label>Remember Me</label>
-        <input type="checkbox" v-model="rememberMe" />
+      <div class="flex items-center">
+        <label for="remember-me" class="ml-2"> Remember me </label>
+        <Checkbox v-model="rememberMe" inputId="remember-me" name="rememberMe" value="rememberMe" />
       </div>
-      <button type="submit">Login</button>
+      <Button type="submit" label="Login" icon="pi pi-search" />
     </form>
   </main>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
